@@ -12,13 +12,11 @@
   body { background: #000; color: #fff; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
 
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-
-  .bc { font-family: 'Barlow Condensed', sans-serif; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
   /* ── HERO ── */
   .hero {
-    padding: 120px 40px 80px;
+    padding: 110px 40px 80px;
     background: #000;
     position: relative;
     overflow: hidden;
@@ -26,129 +24,61 @@
   }
   .hero::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(239,68,68,.18) 0%, transparent 65%);
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(239,68,68,.15) 0%, transparent 65%);
     pointer-events: none;
   }
-  .hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; animation: fadeUp .6s ease both; }
-  .hero-eyebrow {
+  .hero-inner {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    animation: fadeUp .55s ease both;
+  }
+  .live-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: #EF4444; color: #fff;
     font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 800;
-    letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 12px;
-    margin-bottom: 22px;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 12px; margin-bottom: 22px;
   }
-  .hero-eyebrow span { width: 8px; height: 8px; background: #fff; border-radius: 50%; display: inline-block; animation: pulse 1.5s infinite; }
+  .live-badge span {
+    width: 8px; height: 8px; background: #fff; border-radius: 50%;
+    display: inline-block; animation: pulse 1.5s infinite;
+  }
   .hero h1 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 6em; font-weight: 900;
-    text-transform: uppercase; line-height: .92; margin-bottom: 18px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 5.5em; font-weight: 900;
+    text-transform: uppercase; line-height: .92; margin-bottom: 18px; color: #fff;
   }
   .hero h1 em { font-style: normal; color: #EF4444; }
   .hero p {
-    font-size: 1.15em; line-height: 1.7; color: #b0b0b0; max-width: 620px; margin: 0 auto 36px;
+    font-size: 1.1em; line-height: 1.7; color: #b0b0b0;
+    max-width: 540px; margin: 0 auto;
   }
-  .hero-stats {
-    display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 10px;
-  }
-  .hero-stat-num {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 2.2em; font-weight: 900; color: #fff; line-height: 1;
-  }
-  .hero-stat-label { font-size: .78em; color: #777; margin-top: 4px; }
 
-  /* ── SECTION WRAPPER ── */
-  .section { padding: 60px 40px; }
-  .section--dark { background: #000; }
-  .section--mid { background: #0a0a0a; }
-  .section--border { border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a; }
-
-  .section-header { text-align: center; margin-bottom: 40px; }
-  .eyebrow {
-    font-family: 'Barlow Condensed', sans-serif; font-size: .75em; font-weight: 800;
-    letter-spacing: 3px; text-transform: uppercase; color: #EF4444; margin-bottom: 10px;
+  /* ── GRID SECTION ── */
+  .prizes-section {
+    padding: 60px 40px;
+    background: #0a0a0a;
+    border-top: 1px solid #1a1a1a;
   }
-  .section-header h2 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 2.4em; font-weight: 900;
-    text-transform: uppercase; color: #fff; margin: 0 0 12px;
-  }
-  .section-header p { font-size: 1em; color: #999; max-width: 600px; margin: 0 auto; }
-
   .container { max-width: 1100px; margin: 0 auto; }
 
-  /* ── FEATURED / HERO PRIZE ── */
-  .featured-prize {
-    background: linear-gradient(135deg, #1a0000, #260808);
-    border: 1px solid rgba(239,68,68,.4);
-    border-radius: 18px;
-    padding: 0;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    margin-bottom: 24px;
-    position: relative;
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif; font-size: .75em; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase; color: #EF4444;
+    text-align: center; margin-bottom: 10px;
   }
-  .featured-prize::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(239,68,68,.12) 0%, transparent 65%);
-    pointer-events: none;
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 2.2em; font-weight: 900;
+    text-transform: uppercase; color: #fff;
+    text-align: center; margin-bottom: 40px;
   }
-  .featured-prize-img {
-    width: 100%; height: 100%; object-fit: cover; display: block; min-height: 300px;
-  }
-  .featured-prize-body {
-    padding: 40px 36px;
-    display: flex; flex-direction: column; justify-content: center;
-    position: relative; z-index: 1;
-  }
-  .prize-tag {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif; font-size: .7em; font-weight: 800;
-    letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 12px;
-    margin-bottom: 14px;
-  }
-  .prize-tag--featured { background: #EF4444; color: #fff; }
-  .prize-tag--deadline { background: rgba(239,68,68,.18); color: #ef6b6b; border: 1px solid rgba(239,68,68,.3); }
-  .prize-tag--open { background: rgba(34,197,94,.18); color: #4ade80; border: 1px solid rgba(34,197,94,.3); }
-  .prize-tag--running { background: rgba(251,191,36,.18); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
-  .prize-tag--ended { background: rgba(100,100,100,.18); color: #888; border: 1px solid rgba(100,100,100,.3); }
 
-  .featured-prize-body h2 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 2.8em; font-weight: 900;
-    text-transform: uppercase; line-height: .95; margin-bottom: 12px;
-  }
-  .prize-value {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1.3em; font-weight: 800;
-    color: #EF4444; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;
-  }
-  .featured-prize-body p { font-size: 1em; line-height: 1.65; color: #b0b0b0; margin-bottom: 24px; }
-  .prize-date-bar {
-    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-    font-family: 'Barlow Condensed', sans-serif; font-size: .8em; font-weight: 800;
-    letter-spacing: 1px; text-transform: uppercase; color: #888; margin-bottom: 24px;
-  }
-  .prize-date-bar strong { color: #ccc; }
-  .prize-date-sep { color: #444; }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1.05em; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
-    padding: 14px 34px; border-radius: 8px; transition: opacity .2s;
-  }
-  .btn:hover { opacity: .85; }
-  .btn--red { background: #EF4444; color: #fff; }
-  .btn--ghost { background: transparent; color: #ccc; border: 1px solid #333; }
-  .btn--ghost:hover { border-color: #555; }
-
-  /* ── PRIZE CARDS GRID ── */
+  /* ── PRIZE CARDS ── */
   .prizes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
-  .prizes-grid--2 { grid-template-columns: repeat(2, 1fr); }
 
   .prize-card {
     background: #0d0d0d;
@@ -157,434 +87,259 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: border-color .25s, box-shadow .25s;
     text-decoration: none;
     color: inherit;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
   }
   .prize-card:hover {
     border-color: rgba(239,68,68,.5);
-    box-shadow: 0 0 0 3px rgba(239,68,68,.1), 0 16px 40px rgba(0,0,0,.5);
+    box-shadow: 0 0 0 3px rgba(239,68,68,.08), 0 20px 40px rgba(0,0,0,.5);
+    transform: translateY(-3px);
   }
-  .prize-card--gold { border-color: rgba(255,193,7,.3); background: linear-gradient(135deg,#1c1500,#120e00); }
-  .prize-card--gold:hover { border-color: rgba(255,193,7,.6); box-shadow: 0 0 0 3px rgba(255,193,7,.08), 0 16px 40px rgba(0,0,0,.5); }
 
-  .prize-card-img-wrap {
+  /* image */
+  .prize-card-img {
     position: relative;
     aspect-ratio: 16/9;
     overflow: hidden;
   }
-  .prize-card-img-wrap img {
+  .prize-card-img img {
     width: 100%; height: 100%; object-fit: cover; display: block;
     transition: transform .4s;
   }
-  .prize-card:hover .prize-card-img-wrap img { transform: scale(1.04); }
-  .prize-card-img-overlay {
+  .prize-card:hover .prize-card-img img { transform: scale(1.05); }
+  .prize-card-img::after {
+    content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%);
-  }
-  .prize-card-img-badge {
-    position: absolute; top: 12px; left: 12px;
+    background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 55%);
   }
 
+  /* status badge overlaid on image */
+  .status-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 1;
+    font-family: 'Barlow Condensed', sans-serif; font-size: .68em; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 6px;
+  }
+  .status-badge--open    { background: rgba(34,197,94,.2);  color: #4ade80; border: 1px solid rgba(34,197,94,.4); }
+  .status-badge--live    { background: #EF4444;             color: #fff; }
+  .status-badge--closing { background: rgba(239,68,68,.2);  color: #ef6b6b; border: 1px solid rgba(239,68,68,.4); }
+  .status-badge--members { background: rgba(255,193,7,.15); color: #FFC107; border: 1px solid rgba(255,193,7,.35); }
+  .status-badge--ongoing { background: rgba(100,100,255,.15); color: #a5b4fc; border: 1px solid rgba(100,100,255,.3); }
+
+  /* body */
   .prize-card-body {
-    padding: 22px 22px 24px;
+    padding: 22px 22px 26px;
     flex: 1;
     display: flex;
     flex-direction: column;
   }
   .prize-card-title {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1.45em; font-weight: 900;
-    text-transform: uppercase; color: #fff; line-height: 1.05; margin-bottom: 8px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.5em; font-weight: 900;
+    text-transform: uppercase; color: #fff; line-height: 1; margin-bottom: 8px;
   }
   .prize-card-value {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1em; font-weight: 800;
+    font-family: 'Barlow Condensed', sans-serif; font-size: .95em; font-weight: 800;
     color: #EF4444; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px;
   }
   .prize-card-desc {
-    font-size: .88em; line-height: 1.6; color: #999; margin-bottom: 18px; flex: 1;
+    font-size: .88em; line-height: 1.6; color: #999;
+    flex: 1; margin-bottom: 20px;
   }
 
+  /* footer row */
   .prize-card-footer {
-    border-top: 1px solid #1a1a1a;
-    padding-top: 14px;
-    display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border-top: 1px solid #1a1a1a; padding-top: 14px; flex-wrap: wrap;
   }
-  .prize-card-date {
+  .prize-date {
     font-family: 'Barlow Condensed', sans-serif; font-size: .72em; font-weight: 800;
     text-transform: uppercase; letter-spacing: .5px; color: #666; line-height: 1.4;
   }
-  .prize-card-date strong { color: #aaa; display: block; }
-  .prize-card-link {
+  .prize-date strong { color: #aaa; display: block; font-size: 1.05em; }
+  .card-link {
     font-family: 'Barlow Condensed', sans-serif; font-size: .8em; font-weight: 800;
     text-transform: uppercase; letter-spacing: 1px; color: #EF4444;
-    text-decoration: none; border-bottom: 1px solid rgba(239,68,68,.35);
-    padding-bottom: 1px; white-space: nowrap; flex-shrink: 0;
-    transition: border-color .2s;
+    text-decoration: none; border-bottom: 1px solid rgba(239,68,68,.3);
+    padding-bottom: 1px; white-space: nowrap;
+    transition: border-color .2s, color .2s;
   }
-  .prize-card-link:hover { border-color: #EF4444; }
+  .card-link:hover { color: #ff6b6b; border-color: #ff6b6b; }
 
-  /* ── COUNTDOWN STRIP ── */
-  .countdown-strip {
-    background: #0a0a0a;
-    border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;
-    padding: 28px 40px;
+  /* ── ENDED SECTION ── */
+  .ended-section {
+    padding: 60px 40px;
+    background: #000;
+    border-top: 1px solid #1a1a1a;
   }
-  .countdown-inner {
-    max-width: 1000px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-  }
-  .countdown-label {
-    font-family: 'Barlow Condensed', sans-serif;
-  }
-  .countdown-label .eyebrow { margin-bottom: 4px; }
-  .countdown-label strong {
-    display: block; font-size: 1.4em; font-weight: 900; text-transform: uppercase; color: #fff;
-  }
-  .countdown-units {
-    display: flex; gap: 16px;
-  }
-  .countdown-unit {
-    text-align: center;
-    background: #111; border: 1px solid #2a2a2a; border-radius: 10px;
-    padding: 14px 18px; min-width: 72px;
-  }
-  .countdown-num {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 2.4em; font-weight: 900;
-    color: #fff; line-height: 1; display: block;
-  }
-  .countdown-unit-label {
-    font-family: 'Barlow Condensed', sans-serif; font-size: .65em; font-weight: 800;
-    letter-spacing: 1.5px; text-transform: uppercase; color: #666; margin-top: 3px;
-  }
-
-  /* ── HOW TO ENTER STRIP ── */
-  .how-to-enter {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-  }
-  .step-card {
-    background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 14px;
-    padding: 26px 20px; text-align: center;
-  }
-  .step-num {
-    width: 44px; height: 44px; border-radius: 50%; background: #EF4444; color: #fff;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1.3em; font-weight: 900;
-    display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
-  }
-  .step-title {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1em; font-weight: 900;
-    text-transform: uppercase; color: #fff; margin-bottom: 8px;
-  }
-  .step-desc { font-size: .84em; color: #888; line-height: 1.55; }
-
-  /* ── CATEGORY TABS ── */
-  .cat-strip {
-    display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; justify-content: center;
-  }
-  .cat-pill {
-    font-family: 'Barlow Condensed', sans-serif; font-size: .78em; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 1px; padding: 8px 18px; border-radius: 20px;
-    border: 1px solid #2a2a2a; background: #111; color: #888; cursor: pointer;
-    transition: all .2s; text-decoration: none;
-  }
-  .cat-pill--active, .cat-pill:hover { background: #EF4444; border-color: #EF4444; color: #fff; }
-
-  /* ── GRAND PRIZE CALLOUT ── */
-  .grand-callout {
-    background: linear-gradient(135deg, #1a1200, #2a1c00);
-    border: 1px solid rgba(255,193,7,.35);
-    border-radius: 18px; padding: 40px;
-    text-align: center; position: relative; overflow: hidden;
-  }
-  .grand-callout::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(255,193,7,.1) 0%, transparent 65%);
+  .prize-card--ended {
+    opacity: .55;
     pointer-events: none;
   }
-  .grand-callout-inner { position: relative; z-index: 1; }
-  .grand-callout .trophy { font-size: 3.5em; margin-bottom: 14px; }
-  .grand-callout h2 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 3em; font-weight: 900;
-    text-transform: uppercase; color: #fff; margin-bottom: 10px; line-height: 1;
+  .status-badge--ended {
+    background: rgba(80,80,80,.3); color: #666; border: 1px solid #333;
   }
-  .grand-callout h2 em { font-style: normal; color: #FFC107; }
-  .grand-callout p { font-size: 1.05em; color: #b0b0b0; line-height: 1.7; max-width: 600px; margin: 0 auto 28px; }
-  .grand-value {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 4.5em; font-weight: 900;
-    color: #FFC107; line-height: 1; margin: 14px 0;
-  }
-  .grand-value span { font-size: .45em; color: #fff; vertical-align: super; }
 
   /* ── FOOTER CTA ── */
   .footer-cta {
     padding: 80px 40px;
     background: #0a0a0a;
-    position: relative; overflow: hidden;
     border-top: 1px solid #1a1a1a;
     text-align: center;
+    position: relative; overflow: hidden;
   }
   .footer-cta::before {
     content: '';
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 100%, rgba(239,68,68,.15) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 100%, rgba(239,68,68,.13) 0%, transparent 65%);
     pointer-events: none;
   }
-  .footer-cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .footer-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
   .footer-cta h2 {
-    font-family: 'Barlow Condensed', sans-serif; font-size: 3.2em; font-weight: 900;
-    text-transform: uppercase; line-height: 1; margin-bottom: 16px;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 3em; font-weight: 900;
+    text-transform: uppercase; line-height: 1; margin-bottom: 14px;
   }
-  .footer-cta p { font-size: 1.1em; color: #b0b0b0; line-height: 1.7; margin-bottom: 30px; }
-  .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .footer-cta p { font-size: 1.05em; color: #b0b0b0; line-height: 1.7; margin-bottom: 28px; }
+  .btn {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.05em; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+    padding: 14px 36px; border-radius: 8px; transition: opacity .2s;
+  }
+  .btn:hover { opacity: .85; }
+  .btn--red { background: #EF4444; color: #fff; }
+  .btn--ghost { background: transparent; color: #ccc; border: 1px solid #333; margin-left: 12px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
-    .featured-prize { grid-template-columns: 1fr; }
-    .featured-prize-img { min-height: 220px; max-height: 280px; width: 100%; }
     .prizes-grid { grid-template-columns: repeat(2, 1fr); }
-    .prizes-grid--2 { grid-template-columns: 1fr; }
-    .how-to-enter { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 3.5em !important; }
-    .hero { padding: 70px 24px 50px; }
-    .section { padding: 50px 20px; }
-    .prizes-grid, .prizes-grid--2 { grid-template-columns: 1fr; }
-    .how-to-enter { grid-template-columns: 1fr; }
-    .countdown-units { gap: 8px; }
-    .countdown-unit { padding: 10px 12px; min-width: 58px; }
-    .countdown-num { font-size: 1.9em; }
-    .grand-value { font-size: 3em; }
-    .grand-callout h2 { font-size: 2.2em; }
+  @media (max-width: 580px) {
+    .hero { padding: 70px 24px 60px; }
+    .hero h1 { font-size: 3.6em; }
+    .prizes-section, .ended-section, .footer-cta { padding: 50px 20px; }
+    .prizes-grid { grid-template-columns: 1fr; }
+    .btn--ghost { margin-left: 0; margin-top: 10px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════ -->
-<!--  HERO                                     -->
-<!-- ══════════════════════════════════════════ -->
+<!-- ── HERO ── -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow"><span></span> Always Something to Win</div>
-    <h1>Win Big.<br><em>Race &amp; Compete</em><br>For Prizes.</h1>
-    <p>From weekly giveaways to season-long championships — every event is a shot at something real. Browse active prizes below and find out how to enter.</p>
-    <div class="hero-stats">
-      <div>
-        <div class="hero-stat-num">$1,800+</div>
-        <div class="hero-stat-label">In Active Prize Money</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">6</div>
-        <div class="hero-stat-label">Active Prizes Right Now</div>
-      </div>
-      <div>
-        <div class="hero-stat-num">2</div>
-        <div class="hero-stat-label">Closing This Month</div>
-      </div>
-    </div>
+    <div class="live-badge"><span></span> Prizes &amp; Giveaways</div>
+    <h1>Win.<br><em>Compete.</em><br>Collect.</h1>
+    <p>From weekly giveaways to season-long championships — every event is a shot at something real. Click any prize to learn more and enter.</p>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!--  COUNTDOWN — NEXT DEADLINE                -->
-<!-- ══════════════════════════════════════════ -->
-<div class="countdown-strip">
-  <div class="countdown-inner">
-    <div class="countdown-label">
-      <div class="eyebrow">⏳ Closing Soon</div>
-      <strong>Lotus GTC League — Registration Deadline</strong>
-      <div style="font-size:.85em;color:#666;margin-top:4px;">Register by July 6, 2026 to lock in your spot</div>
-    </div>
-    <div class="countdown-units" id="countdown-units">
-      <div class="countdown-unit"><span class="countdown-num" id="cd-days">—</span><div class="countdown-unit-label">Days</div></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">—</span><div class="countdown-unit-label">Hrs</div></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">—</span><div class="countdown-unit-label">Min</div></div>
-      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">—</span><div class="countdown-unit-label">Sec</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--  GRAND PRIZE CALLOUT                      -->
-<!-- ══════════════════════════════════════════ -->
-<div class="section section--dark">
+<!-- ── ACTIVE PRIZES ── -->
+<div class="prizes-section">
   <div class="container">
-    <div class="grand-callout">
-      <div class="grand-callout-inner">
-        <div class="prize-tag prize-tag--running" style="display:inline-block;margin-bottom:18px;">🔴 Season In Progress</div>
-        <div class="trophy">🏆</div>
-        <h2>Audi TT Cup<br><em>Championship Prize</em></h2>
-        <div class="grand-value"><span>$</span>600</div>
-        <p>The inaugural SIM1Racing league is underway — five weeks, five circuits, two races every Monday night. The overall championship winner takes home the top prize, with payouts for 2nd and 3rd as well. Prize pool grows with the field.</p>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
-          <div style="background:rgba(255,193,7,.1);border:1px solid rgba(255,193,7,.3);border-radius:8px;padding:10px 20px;font-family:'Barlow Condensed',sans-serif;font-size:.9em;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#FFC107;">🥇 1st: $300</div>
-          <div style="background:rgba(192,196,200,.08);border:1px solid rgba(192,196,200,.25);border-radius:8px;padding:10px 20px;font-family:'Barlow Condensed',sans-serif;font-size:.9em;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#d8dde2;">🥈 2nd: $200</div>
-          <div style="background:rgba(205,127,50,.1);border:1px solid rgba(205,127,50,.3);border-radius:8px;padding:10px 20px;font-family:'Barlow Condensed',sans-serif;font-size:.9em;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#CD7F32;">🥉 3rd: $100</div>
-        </div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.8em;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:24px;">Season ends June 29, 2026 &middot; Finale at Spa</div>
-        <a href="#current-season" class="btn btn--red">View Live Standings</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--  ACTIVE PRIZES GRID                       -->
-<!-- ══════════════════════════════════════════ -->
-<div class="section section--mid section--border">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Enter Now</div>
-      <h2>Active Prizes &amp; Giveaways</h2>
-      <p>All prizes currently open for entry. Click any card to view full rules and how to enter.</p>
-    </div>
-
-    <!-- Category pills -->
-    <div class="cat-strip">
-      <a class="cat-pill cat-pill--active" href="#">All</a>
-      <a class="cat-pill" href="#">Leagues</a>
-      <a class="cat-pill" href="#">Giveaways</a>
-      <a class="cat-pill" href="#">Weekly</a>
-      <a class="cat-pill" href="#">Members Only</a>
-    </div>
+    <div class="section-label">Currently Active</div>
+    <div class="section-title">Open Prizes</div>
 
     <div class="prizes-grid">
 
-      <!-- Card 1: Lotus GTC League -->
-      <a class="prize-card prize-card--red" href="#lotus-league" style="text-decoration:none;color:inherit;border-color:rgba(239,68,68,.35);background:linear-gradient(135deg,#1a0000,#1e0505);">
-        <div class="prize-card-img-wrap">
+      <!-- 1 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
           <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&q=80" alt="Lotus GTC League">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--deadline">Register by Jul 6</span>
-          </div>
+          <span class="status-badge status-badge--closing">Closes Jul 6</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">Lotus GTC SIM1 League</div>
-          <div class="prize-card-value">Prize Pool up to $900 · 3 Podium Spots</div>
-          <p class="prize-card-desc">Four weeks in the Lotus Evora GTC across iconic circuits. Top-3 finishers split a prize pool that scales with the field size — the more drivers, the bigger the purse.</p>
+          <div class="prize-card-title">Lotus GTC League</div>
+          <div class="prize-card-value">Prize Pool up to $900</div>
+          <p class="prize-card-desc">Four-week spec championship in the Lotus Evora GTC. Prize pool grows with the field — top 3 take home cash.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              Registration Closes
-              <strong>July 6, 2026</strong>
-            </div>
-            <span class="prize-card-link">Enter Now →</span>
+            <div class="prize-date">Register by<strong>July 6, 2026</strong></div>
+            <span class="card-link">View Details →</span>
           </div>
         </div>
       </a>
 
-      <!-- Card 2: Weekly Hotlap Challenge -->
-      <a class="prize-card" href="#hotlap" style="text-decoration:none;color:inherit;">
-        <div class="prize-card-img-wrap">
+      <!-- 2 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
           <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80" alt="Weekly Hotlap Challenge">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--open">🟢 Open Now</span>
-          </div>
+          <span class="status-badge status-badge--open">Open Now</span>
         </div>
         <div class="prize-card-body">
           <div class="prize-card-title">Weekly Hotlap Challenge</div>
-          <div class="prize-card-value">$50 Store Credit · Fastest Lap Wins</div>
-          <p class="prize-card-desc">Post your fastest lap on the featured circuit of the week and top the leaderboard by Sunday midnight. A new track and new winner every week.</p>
+          <div class="prize-card-value">$50 Store Credit</div>
+          <p class="prize-card-desc">Post your fastest lap on the featured circuit. Top the leaderboard by Sunday midnight and take the prize.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              Resets Every
-              <strong>Sunday at Midnight</strong>
-            </div>
-            <span class="prize-card-link">View Leaderboard →</span>
+            <div class="prize-date">Resets every<strong>Sunday at Midnight</strong></div>
+            <span class="card-link">View Leaderboard →</span>
           </div>
         </div>
       </a>
 
-      <!-- Card 3: Gold Member Raffle -->
-      <a class="prize-card prize-card--gold" href="#raffle" style="text-decoration:none;color:inherit;">
-        <div class="prize-card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80" alt="Gold Member Raffle">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--running" style="background:rgba(255,193,7,.2);color:#FFC107;border:1px solid rgba(255,193,7,.4);">Members Only</span>
-          </div>
+      <!-- 3 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
+          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80" alt="Gold Member Monthly Raffle">
+          <span class="status-badge status-badge--members">Members Only</span>
         </div>
         <div class="prize-card-body">
           <div class="prize-card-title">Gold Member Monthly Raffle</div>
-          <div class="prize-card-value" style="color:#FFC107;">Sim Hardware Bundle · $350 Value</div>
-          <p class="prize-card-desc">Every Gold Member gets one raffle ticket per month automatically. This month's prize is a sim hardware bundle including a wheel, pedals, and accessories. No entry needed.</p>
+          <div class="prize-card-value">Sim Hardware Bundle — $350 Value</div>
+          <p class="prize-card-desc">Every Gold Member is entered automatically. One ticket per month — no action needed. Draw at month end.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              Draw Date
-              <strong>June 30, 2026</strong>
-            </div>
-            <span class="prize-card-link" style="color:#FFC107;border-color:rgba(255,193,7,.35);">Learn More →</span>
+            <div class="prize-date">Draw date<strong>June 30, 2026</strong></div>
+            <span class="card-link">Learn More →</span>
           </div>
         </div>
       </a>
 
-      <!-- Card 4: Photo / Clip of the Month -->
-      <a class="prize-card" href="#clip" style="text-decoration:none;color:inherit;">
-        <div class="prize-card-img-wrap">
+      <!-- 4 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
           <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&q=80" alt="Clip of the Month">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--open">🟢 Open Now</span>
-          </div>
+          <span class="status-badge status-badge--open">Open Now</span>
         </div>
         <div class="prize-card-body">
           <div class="prize-card-title">Clip of the Month</div>
-          <div class="prize-card-value">$75 Gift Card · Best Racing Moment</div>
-          <p class="prize-card-desc">Submit your best onboard clip, overtake, or race-winning moment from any event this month. Community votes decide the winner — most votes takes home the gift card.</p>
+          <div class="prize-card-value">$75 Gift Card</div>
+          <p class="prize-card-desc">Submit your best onboard moment from any event this month. Community votes decide the winner.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              Submit by
-              <strong>June 28, 2026</strong>
-            </div>
-            <span class="prize-card-link">Submit Clip →</span>
+            <div class="prize-date">Submit by<strong>June 28, 2026</strong></div>
+            <span class="card-link">Submit a Clip →</span>
           </div>
         </div>
       </a>
 
-      <!-- Card 5: Audi TT Cup Championship -->
-      <a class="prize-card" href="#current-season" style="text-decoration:none;color:inherit;border-color:rgba(239,68,68,.3);">
-        <div class="prize-card-img-wrap">
+      <!-- 5 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
           <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Audi TT Cup Championship">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--running">🔴 Season Week 2 of 5</span>
-          </div>
+          <span class="status-badge status-badge--live">● Season Live</span>
         </div>
         <div class="prize-card-body">
           <div class="prize-card-title">Audi TT Cup Championship</div>
           <div class="prize-card-value">$300 · $200 · $100 Podium Prizes</div>
-          <p class="prize-card-desc">SIM1Racing's inaugural league is midway through its season. Check the live standings and see what it takes to claim the top prize at the Spa finale.</p>
+          <p class="prize-card-desc">SIM1Racing's inaugural league — five weeks, five circuits. Check the live standings heading into the Spa finale.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              Running
-              <strong>Jun 1 – Jun 29, 2026</strong>
-            </div>
-            <span class="prize-card-link">View Standings →</span>
+            <div class="prize-date">Running<strong>Jun 1 – Jun 29, 2026</strong></div>
+            <span class="card-link">View Standings →</span>
           </div>
         </div>
       </a>
 
-      <!-- Card 6: Referral Bonus -->
-      <a class="prize-card" href="#referral" style="text-decoration:none;color:inherit;">
-        <div class="prize-card-img-wrap">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Referral Bonus">
-          <div class="prize-card-img-overlay"></div>
-          <div class="prize-card-img-badge">
-            <span class="prize-tag prize-tag--open">🟢 Always Open</span>
-          </div>
+      <!-- 6 -->
+      <a class="prize-card" href="#">
+        <div class="prize-card-img">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Refer a Driver">
+          <span class="status-badge status-badge--ongoing">Always Open</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">Refer a Driver Bonus</div>
+          <div class="prize-card-title">Refer a Driver</div>
           <div class="prize-card-value">1 Month Free Membership Per Referral</div>
-          <p class="prize-card-desc">Bring a friend into SIM1Racing and earn one month of free Gold Membership for every driver you refer who completes a paid event. No limit on referrals.</p>
+          <p class="prize-card-desc">Refer a friend who completes a paid event and earn a free month of Gold Membership. No limit on referrals.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">
-              No Deadline
-              <strong>Ongoing Program</strong>
-            </div>
-            <span class="prize-card-link">Get Your Code →</span>
+            <div class="prize-date">No deadline<strong>Ongoing</strong></div>
+            <span class="card-link">Get Your Code →</span>
           </div>
         </div>
       </a>
@@ -593,124 +348,58 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!--  FEATURED: LOTUS LEAGUE (upcoming)        -->
-<!-- ══════════════════════════════════════════ -->
-<div class="section section--dark" id="lotus-league">
+<!-- ── PAST PRIZES ── -->
+<div class="ended-section">
   <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Coming Up Next</div>
-      <h2>Lotus GTC League — Full Details</h2>
-    </div>
-    <div class="featured-prize">
-      <img class="featured-prize-img" src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=700&q=80" alt="Lotus GTC">
-      <div class="featured-prize-body">
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
-          <span class="prize-tag prize-tag--featured">Featured Prize</span>
-          <span class="prize-tag prize-tag--deadline">Registration Closes Jul 6</span>
-        </div>
-        <h2>Lotus GTC<br>SIM1 League</h2>
-        <div class="prize-value">Prize Pool: $300 → $600 → $900</div>
-        <p>Four weeks of spec one-make racing in the Lotus Evora GTC. Compete across four iconic circuits every Monday night, earn championship points, and fight for a prize pool that doubles or triples as the field grows.</p>
-        <div class="prize-date-bar">
-          <span>📅 Season:</span>
-          <strong>July 6 – July 27, 2026</strong>
-          <span class="prize-date-sep">·</span>
-          <span>⏰ Race Nights:</span>
-          <strong>Mondays 7:45–9:00 PM</strong>
-        </div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="https://app.acuityscheduling.com/catalog.php?owner=34519846&action=addCart&clear=1&id=2225180" class="btn btn--red">Sign Up — $200</a>
-          <a href="#" class="btn btn--ghost">Full Rules</a>
-        </div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#888;margin-top:14px;">FREE for Gold Members &middot; <span style="color:#ccc;">$200 Non-Members</span></div>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="section-label">Closed</div>
+    <div class="section-title">Past Prizes</div>
 
-<!-- ══════════════════════════════════════════ -->
-<!--  HOW TO ENTER                             -->
-<!-- ══════════════════════════════════════════ -->
-<div class="section section--mid section--border">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">It's Easy</div>
-      <h2>How to Enter Any Prize</h2>
-      <p>Most prizes follow the same simple process — follow these steps to make sure you're always in the running.</p>
-    </div>
-    <div class="how-to-enter">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <div class="step-title">Pick a Prize</div>
-        <p class="step-desc">Browse the active prizes above and find one that fits your schedule and skill level. Check the deadline or running dates.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <div class="step-title">Register or Sign Up</div>
-        <p class="step-desc">Click the entry link on the prize card. Paid entries are handled through our booking system — Gold Members get automatic access.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <div class="step-title">Compete &amp; Earn</div>
-        <p class="step-desc">Show up on race night, submit your clip, or refer a friend — whatever the prize requires. Every point and result counts.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <div class="step-title">Collect Your Prize</div>
-        <p class="step-desc">Winners are contacted within 48 hours of the closing date. Cash prizes are paid out via PayPal or store credit within one week.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--  PAST WINNERS                             -->
-<!-- ══════════════════════════════════════════ -->
-<div class="section section--dark">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow">Hall of Fame</div>
-      <h2>Past Winners</h2>
-      <p>Prizes already claimed — the bar is set. Who's next?</p>
-    </div>
     <div class="prizes-grid">
 
-      <div class="prize-card" style="opacity:.7;">
-        <div class="prize-card-body" style="padding-top:24px;">
-          <span class="prize-tag prize-tag--ended" style="display:inline-block;margin-bottom:12px;">Ended</span>
+      <div class="prize-card prize-card--ended">
+        <div class="prize-card-img">
+          <img src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&q=80" alt="May Hotlap Challenge">
+          <span class="status-badge status-badge--ended">Ended</span>
+        </div>
+        <div class="prize-card-body">
           <div class="prize-card-title">May Hotlap Challenge</div>
-          <div class="prize-card-value">$50 Store Credit · Laguna Seca</div>
-          <p class="prize-card-desc">Monthly fastest-lap challenge. Driver set a blistering 1:27.4 to take the top spot and the prize.</p>
+          <div class="prize-card-value">$50 Store Credit</div>
+          <p class="prize-card-desc">Monthly fastest-lap challenge at Laguna Seca.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">Winner<strong>Dj Hamilton</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#555;">May 31, 2026</span>
+            <div class="prize-date">Winner<strong>Dj Hamilton</strong></div>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">May 31, 2026</span>
           </div>
         </div>
       </div>
 
-      <div class="prize-card" style="opacity:.7;">
-        <div class="prize-card-body" style="padding-top:24px;">
-          <span class="prize-tag prize-tag--ended" style="display:inline-block;margin-bottom:12px;">Ended</span>
+      <div class="prize-card prize-card--ended">
+        <div class="prize-card-img">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="April Clip of the Month">
+          <span class="status-badge status-badge--ended">Ended</span>
+        </div>
+        <div class="prize-card-body">
           <div class="prize-card-title">April Clip of the Month</div>
-          <div class="prize-card-value">$75 Gift Card · Best Overtake</div>
-          <p class="prize-card-desc">Community voted on the best onboard moment of April. A last-corner divebomb at Brands Hatch stole the win.</p>
+          <div class="prize-card-value">$75 Gift Card</div>
+          <p class="prize-card-desc">Community-voted best onboard moment of April.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">Winner<strong>Stephanie Egusquiza</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#555;">Apr 30, 2026</span>
+            <div class="prize-date">Winner<strong>Stephanie Egusquiza</strong></div>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">Apr 30, 2026</span>
           </div>
         </div>
       </div>
 
-      <div class="prize-card" style="opacity:.7;">
-        <div class="prize-card-body" style="padding-top:24px;">
-          <span class="prize-tag prize-tag--ended" style="display:inline-block;margin-bottom:12px;">Ended</span>
+      <div class="prize-card prize-card--ended">
+        <div class="prize-card-img">
+          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80" alt="March Raffle">
+          <span class="status-badge status-badge--ended">Ended</span>
+        </div>
+        <div class="prize-card-body">
           <div class="prize-card-title">March Member Raffle</div>
-          <div class="prize-card-value">Sim Wheel Bundle · $280 Value</div>
-          <p class="prize-card-desc">Monthly Gold Member auto-draw for sim hardware. One lucky member picked from all active Gold subscribers.</p>
+          <div class="prize-card-value">Sim Wheel Bundle — $280 Value</div>
+          <p class="prize-card-desc">Monthly Gold Member auto-draw for sim hardware.</p>
           <div class="prize-card-footer">
-            <div class="prize-card-date">Winner<strong>Jonas Acevedo</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#555;">Mar 31, 2026</span>
+            <div class="prize-date">Winner<strong>Jonas Acevedo</strong></div>
+            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">Mar 31, 2026</span>
           </div>
         </div>
       </div>
@@ -719,74 +408,15 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════ -->
-<!--  FOOTER CTA                               -->
-<!-- ══════════════════════════════════════════ -->
+<!-- ── FOOTER CTA ── -->
 <div class="footer-cta">
   <div class="footer-cta-inner">
     <h2>Don't Miss<br>Your Shot</h2>
-    <p>New prizes drop every month. Become a Gold Member to get free league entry, automatic raffle tickets, and first dibs on every new prize.</p>
-    <div class="btn-row">
-      <a href="#" class="btn btn--red">Become a Gold Member</a>
-      <a href="#" class="btn btn--ghost">Browse All Prizes ↑</a>
-    </div>
+    <p>New prizes drop every month. Become a Gold Member for free league entry, automatic raffle tickets, and first access to every new prize.</p>
+    <a href="#" class="btn btn--red">Become a Gold Member</a>
+    <a href="#" class="btn btn--ghost">Back to Top ↑</a>
   </div>
 </div>
-
-<!-- ══════════════════════════════════════════ -->
-<!--  SCRIPTS                                  -->
-<!-- ══════════════════════════════════════════ -->
-<script>
-(function () {
-  // Countdown to July 6 2026 19:45 local time
-  var deadline = new Date(2026, 6, 6, 19, 45, 0);
-
-  function pad(n) { return String(n).padStart(2, '0'); }
-
-  function tick() {
-    var now = new Date();
-    var diff = deadline - now;
-    if (diff <= 0) {
-      document.getElementById('cd-days').textContent = '00';
-      document.getElementById('cd-hours').textContent = '00';
-      document.getElementById('cd-mins').textContent = '00';
-      document.getElementById('cd-secs').textContent = '00';
-      return;
-    }
-    var days  = Math.floor(diff / 86400000);
-    var hours = Math.floor((diff % 86400000) / 3600000);
-    var mins  = Math.floor((diff % 3600000)  / 60000);
-    var secs  = Math.floor((diff % 60000)    / 1000);
-    document.getElementById('cd-days').textContent  = pad(days);
-    document.getElementById('cd-hours').textContent = pad(hours);
-    document.getElementById('cd-mins').textContent  = pad(mins);
-    document.getElementById('cd-secs').textContent  = pad(secs);
-  }
-
-  tick();
-  setInterval(tick, 1000);
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-
-  // Category pill filter (visual only — wire to real data as needed)
-  document.querySelectorAll('.cat-pill').forEach(function (pill) {
-    pill.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelectorAll('.cat-pill').forEach(function (p) { p.classList.remove('cat-pill--active'); });
-      this.classList.add('cat-pill--active');
-    });
-  });
-})();
-</script>
 
 </body>
 </html>
