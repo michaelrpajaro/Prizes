@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prizes &amp; Giveaways</title>
+<title>Prizes &amp; Giveaways — SIM1Racing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,8 +18,7 @@
   .hero {
     padding: 110px 40px 80px;
     background: #000;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
     text-align: center;
   }
   .hero::before {
@@ -46,7 +45,7 @@
   }
   .hero h1 {
     font-family: 'Barlow Condensed', sans-serif; font-size: 5.5em; font-weight: 900;
-    text-transform: uppercase; line-height: .92; margin-bottom: 18px; color: #fff;
+    text-transform: uppercase; line-height: .92; margin-bottom: 18px;
   }
   .hero h1 em { font-style: normal; color: #EF4444; }
   .hero p {
@@ -54,14 +53,79 @@
     max-width: 540px; margin: 0 auto;
   }
 
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* ── FEATURED CALLOUT — TEAM SPOT ── */
+  .featured-section {
+    padding: 0 40px 60px;
+    background: #000;
+  }
+  .featured-card {
+    position: relative; overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(239,68,68,.4);
+    background: linear-gradient(135deg, #1a0000, #260808);
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    min-height: 380px;
+    text-decoration: none; color: inherit;
+    transition: border-color .25s, box-shadow .25s;
+  }
+  .featured-card:hover {
+    border-color: rgba(239,68,68,.7);
+    box-shadow: 0 0 0 3px rgba(239,68,68,.1), 0 24px 60px rgba(0,0,0,.6);
+  }
+  .featured-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 65% 50%, rgba(239,68,68,.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .featured-img {
+    position: relative; overflow: hidden;
+  }
+  .featured-img img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform .5s;
+  }
+  .featured-card:hover .featured-img img { transform: scale(1.04); }
+  .featured-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, transparent 60%, #1a0000 100%);
+  }
+  .featured-body {
+    padding: 44px 40px;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 1;
+  }
+  .feat-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif; font-size: .72em; font-weight: 800;
+    letter-spacing: 3px; text-transform: uppercase; color: #EF4444; margin-bottom: 12px;
+  }
+  .featured-body h2 {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 3em; font-weight: 900;
+    text-transform: uppercase; line-height: .95; margin-bottom: 14px;
+  }
+  .featured-body p {
+    font-size: 1em; line-height: 1.65; color: #b0b0b0; margin-bottom: 28px; max-width: 400px;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.05em; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+    padding: 14px 36px; border-radius: 8px; transition: opacity .2s;
+    align-self: flex-start;
+  }
+  .btn:hover { opacity: .85; }
+  .btn--red { background: #EF4444; color: #fff; }
+
   /* ── GRID SECTION ── */
   .prizes-section {
     padding: 60px 40px;
     background: #0a0a0a;
     border-top: 1px solid #1a1a1a;
   }
-  .container { max-width: 1100px; margin: 0 auto; }
-
   .section-label {
     font-family: 'Barlow Condensed', sans-serif; font-size: .75em; font-weight: 800;
     letter-spacing: 3px; text-transform: uppercase; color: #EF4444;
@@ -73,22 +137,20 @@
     text-align: center; margin-bottom: 40px;
   }
 
-  /* ── PRIZE CARDS ── */
   .prizes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
+  .prizes-grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
 
   .prize-card {
     background: #0d0d0d;
     border: 1px solid #2a2a2a;
     border-radius: 14px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: inherit;
+    display: flex; flex-direction: column;
+    text-decoration: none; color: inherit;
     transition: border-color .25s, box-shadow .25s, transform .25s;
   }
   .prize-card:hover {
@@ -96,12 +158,11 @@
     box-shadow: 0 0 0 3px rgba(239,68,68,.08), 0 20px 40px rgba(0,0,0,.5);
     transform: translateY(-3px);
   }
+  .prize-card--gold { background: linear-gradient(135deg,#1c1500,#120e00); border-color: rgba(255,193,7,.25); }
+  .prize-card--gold:hover { border-color: rgba(255,193,7,.55); box-shadow: 0 0 0 3px rgba(255,193,7,.07), 0 20px 40px rgba(0,0,0,.5); }
 
-  /* image */
   .prize-card-img {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
+    position: relative; aspect-ratio: 16/9; overflow: hidden;
   }
   .prize-card-img img {
     width: 100%; height: 100%; object-fit: cover; display: block;
@@ -114,7 +175,6 @@
     background: linear-gradient(to top, rgba(0,0,0,.65) 0%, transparent 55%);
   }
 
-  /* status badge overlaid on image */
   .status-badge {
     position: absolute; top: 12px; left: 12px; z-index: 1;
     font-family: 'Barlow Condensed', sans-serif; font-size: .68em; font-weight: 800;
@@ -122,17 +182,14 @@
     padding: 4px 10px; border-radius: 6px;
   }
   .status-badge--open    { background: rgba(34,197,94,.2);  color: #4ade80; border: 1px solid rgba(34,197,94,.4); }
-  .status-badge--live    { background: #EF4444;             color: #fff; }
+  .status-badge--live    { background: #EF4444; color: #fff; }
   .status-badge--closing { background: rgba(239,68,68,.2);  color: #ef6b6b; border: 1px solid rgba(239,68,68,.4); }
-  .status-badge--members { background: rgba(255,193,7,.15); color: #FFC107; border: 1px solid rgba(255,193,7,.35); }
-  .status-badge--ongoing { background: rgba(100,100,255,.15); color: #a5b4fc; border: 1px solid rgba(100,100,255,.3); }
+  .status-badge--gold    { background: rgba(255,193,7,.15); color: #FFC107; border: 1px solid rgba(255,193,7,.35); }
+  .status-badge--ended   { background: rgba(80,80,80,.3); color: #666; border: 1px solid #333; }
 
-  /* body */
   .prize-card-body {
     padding: 22px 22px 26px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    flex: 1; display: flex; flex-direction: column;
   }
   .prize-card-title {
     font-family: 'Barlow Condensed', sans-serif; font-size: 1.5em; font-weight: 900;
@@ -142,12 +199,11 @@
     font-family: 'Barlow Condensed', sans-serif; font-size: .95em; font-weight: 800;
     color: #EF4444; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px;
   }
+  .prize-card-value--gold { color: #FFC107; }
   .prize-card-desc {
     font-size: .88em; line-height: 1.6; color: #999;
     flex: 1; margin-bottom: 20px;
   }
-
-  /* footer row */
   .prize-card-footer {
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
     border-top: 1px solid #1a1a1a; padding-top: 14px; flex-wrap: wrap;
@@ -165,19 +221,17 @@
     transition: border-color .2s, color .2s;
   }
   .card-link:hover { color: #ff6b6b; border-color: #ff6b6b; }
+  .card-link--gold { color: #FFC107; border-bottom-color: rgba(255,193,7,.3); }
+  .card-link--gold:hover { color: #ffd94a; border-color: #ffd94a; }
 
-  /* ── ENDED SECTION ── */
+  /* ── PAST SECTION ── */
   .ended-section {
     padding: 60px 40px;
     background: #000;
     border-top: 1px solid #1a1a1a;
   }
   .prize-card--ended {
-    opacity: .55;
-    pointer-events: none;
-  }
-  .status-badge--ended {
-    background: rgba(80,80,80,.3); color: #666; border: 1px solid #333;
+    opacity: .55; pointer-events: none;
   }
 
   /* ── FOOTER CTA ── */
@@ -185,8 +239,7 @@
     padding: 80px 40px;
     background: #0a0a0a;
     border-top: 1px solid #1a1a1a;
-    text-align: center;
-    position: relative; overflow: hidden;
+    text-align: center; position: relative; overflow: hidden;
   }
   .footer-cta::before {
     content: '';
@@ -200,26 +253,26 @@
     text-transform: uppercase; line-height: 1; margin-bottom: 14px;
   }
   .footer-cta p { font-size: 1.05em; color: #b0b0b0; line-height: 1.7; margin-bottom: 28px; }
-  .btn {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif; font-size: 1.05em; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
-    padding: 14px 36px; border-radius: 8px; transition: opacity .2s;
+  .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn--ghost {
+    background: transparent; color: #ccc; border: 1px solid #333;
   }
-  .btn:hover { opacity: .85; }
-  .btn--red { background: #EF4444; color: #fff; }
-  .btn--ghost { background: transparent; color: #ccc; border: 1px solid #333; margin-left: 12px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
+    .featured-card { grid-template-columns: 1fr; min-height: auto; }
+    .featured-img { aspect-ratio: 16/9; }
+    .featured-img::after { background: linear-gradient(to top, #1a0000 0%, transparent 50%); }
     .prizes-grid { grid-template-columns: repeat(2, 1fr); }
+    .prizes-grid--2 { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 580px) {
     .hero { padding: 70px 24px 60px; }
     .hero h1 { font-size: 3.6em; }
-    .prizes-section, .ended-section, .footer-cta { padding: 50px 20px; }
-    .prizes-grid { grid-template-columns: 1fr; }
-    .btn--ghost { margin-left: 0; margin-top: 10px; }
+    .featured-section, .prizes-section, .ended-section, .footer-cta { padding: 50px 20px; }
+    .prizes-grid, .prizes-grid--2 { grid-template-columns: 1fr; }
+    .featured-body { padding: 28px 24px; }
+    .featured-body h2 { font-size: 2.2em; }
   }
 </style>
 </head>
@@ -230,116 +283,82 @@
   <div class="hero-inner">
     <div class="live-badge"><span></span> Prizes &amp; Giveaways</div>
     <h1>Win.<br><em>Compete.</em><br>Collect.</h1>
-    <p>From weekly giveaways to season-long championships — every event is a shot at something real. Click any prize to learn more and enter.</p>
+    <p>From free race entries to a seat on the SIM1Racing team — every prize is a real opportunity. Click any card to find out how to enter.</p>
+  </div>
+</div>
+
+<!-- ── FEATURED: TEAM SPOT ── -->
+<div class="featured-section">
+  <div class="container">
+    <a class="featured-card" href="https://www.sim1racing.com/qualifiers" target="_blank" rel="noopener">
+      <div class="featured-img">
+        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=800&q=80" alt="Earn a Spot on the SIM1Racing Team">
+      </div>
+      <div class="featured-body">
+        <div class="feat-eyebrow">⭐ Featured Prize</div>
+        <h2>Earn a Spot on the<br>SIM1Racing Team</h2>
+        <p>Think you have what it takes? Compete in the qualifier series and prove it. The fastest drivers earn an official seat on the SIM1Racing team.</p>
+        <span class="btn btn--red">View Qualifiers →</span>
+      </div>
+    </a>
   </div>
 </div>
 
 <!-- ── ACTIVE PRIZES ── -->
 <div class="prizes-section">
   <div class="container">
-    <div class="section-label">Currently Active</div>
-    <div class="section-title">Open Prizes</div>
+    <div class="section-label">Enter Now</div>
+    <div class="section-title">Active Prizes</div>
 
     <div class="prizes-grid">
 
-      <!-- 1 -->
-      <a class="prize-card" href="#">
+      <!-- Free Endurance Race Entry -->
+      <a class="prize-card" href="https://www.sim1racing.com/endurance-races" target="_blank" rel="noopener">
         <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&q=80" alt="Lotus GTC League">
-          <span class="status-badge status-badge--closing">Closes Jul 6</span>
-        </div>
-        <div class="prize-card-body">
-          <div class="prize-card-title">Lotus GTC League</div>
-          <div class="prize-card-value">Prize Pool up to $900</div>
-          <p class="prize-card-desc">Four-week spec championship in the Lotus Evora GTC. Prize pool grows with the field — top 3 take home cash.</p>
-          <div class="prize-card-footer">
-            <div class="prize-date">Register by<strong>July 6, 2026</strong></div>
-            <span class="card-link">View Details →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 2 -->
-      <a class="prize-card" href="#">
-        <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80" alt="Weekly Hotlap Challenge">
+          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80" alt="Free Endurance Race Entry">
           <span class="status-badge status-badge--open">Open Now</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">Weekly Hotlap Challenge</div>
-          <div class="prize-card-value">$50 Store Credit</div>
-          <p class="prize-card-desc">Post your fastest lap on the featured circuit. Top the leaderboard by Sunday midnight and take the prize.</p>
+          <div class="prize-card-title">Free Endurance Race Entry</div>
+          <div class="prize-card-value">Free Entry — Next Event</div>
+          <p class="prize-card-desc">Win a free entry into the next SIM1Racing endurance race. Hours of wheel-to-wheel competition — on us.</p>
           <div class="prize-card-footer">
-            <div class="prize-date">Resets every<strong>Sunday at Midnight</strong></div>
-            <span class="card-link">View Leaderboard →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 3 -->
-      <a class="prize-card" href="#">
-        <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80" alt="Gold Member Monthly Raffle">
-          <span class="status-badge status-badge--members">Members Only</span>
-        </div>
-        <div class="prize-card-body">
-          <div class="prize-card-title">Gold Member Monthly Raffle</div>
-          <div class="prize-card-value">Sim Hardware Bundle — $350 Value</div>
-          <p class="prize-card-desc">Every Gold Member is entered automatically. One ticket per month — no action needed. Draw at month end.</p>
-          <div class="prize-card-footer">
-            <div class="prize-date">Draw date<strong>June 30, 2026</strong></div>
+            <div class="prize-date">Prize type<strong>Free Event Entry</strong></div>
             <span class="card-link">Learn More →</span>
           </div>
         </div>
       </a>
 
-      <!-- 4 -->
-      <a class="prize-card" href="#">
+      <!-- League Prize Pool -->
+      <a class="prize-card" href="https://www.sim1racing.com/leagues" target="_blank" rel="noopener">
         <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&q=80" alt="Clip of the Month">
-          <span class="status-badge status-badge--open">Open Now</span>
-        </div>
-        <div class="prize-card-body">
-          <div class="prize-card-title">Clip of the Month</div>
-          <div class="prize-card-value">$75 Gift Card</div>
-          <p class="prize-card-desc">Submit your best onboard moment from any event this month. Community votes decide the winner.</p>
-          <div class="prize-card-footer">
-            <div class="prize-date">Submit by<strong>June 28, 2026</strong></div>
-            <span class="card-link">Submit a Clip →</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 5 -->
-      <a class="prize-card" href="#">
-        <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="Audi TT Cup Championship">
+          <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80" alt="League Championship Prize">
           <span class="status-badge status-badge--live">● Season Live</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">Audi TT Cup Championship</div>
-          <div class="prize-card-value">$300 · $200 · $100 Podium Prizes</div>
-          <p class="prize-card-desc">SIM1Racing's inaugural league — five weeks, five circuits. Check the live standings heading into the Spa finale.</p>
+          <div class="prize-card-title">League Championship</div>
+          <div class="prize-card-value">Prize Pool up to $900</div>
+          <p class="prize-card-desc">Compete across multiple race nights and earn championship points. Top-3 drivers split a cash prize pool that grows with the field.</p>
           <div class="prize-card-footer">
-            <div class="prize-date">Running<strong>Jun 1 – Jun 29, 2026</strong></div>
-            <span class="card-link">View Standings →</span>
+            <div class="prize-date">Prize type<strong>Cash — Top 3 Podium</strong></div>
+            <span class="card-link">View Leagues →</span>
           </div>
         </div>
       </a>
 
-      <!-- 6 -->
-      <a class="prize-card" href="#">
+      <!-- Free Track Day Pass -->
+      <a class="prize-card prize-card--gold" href="https://www.sim1racing.com/win-a-free-track-day" target="_blank" rel="noopener">
         <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Refer a Driver">
-          <span class="status-badge status-badge--ongoing">Always Open</span>
+          <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600&q=80" alt="Win a Free Track Day Pass">
+          <span class="status-badge status-badge--gold">🏁 Enter to Win</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">Refer a Driver</div>
-          <div class="prize-card-value">1 Month Free Membership Per Referral</div>
-          <p class="prize-card-desc">Refer a friend who completes a paid event and earn a free month of Gold Membership. No limit on referrals.</p>
+          <div class="prize-card-title">Win a Free Track Day Pass</div>
+          <div class="prize-card-value prize-card-value--gold">2-Day Track Day Pass</div>
+          <p class="prize-card-desc">Take it off-screen — win a free two-day track day pass and get behind the wheel of a real car on a real circuit.</p>
           <div class="prize-card-footer">
-            <div class="prize-date">No deadline<strong>Ongoing</strong></div>
-            <span class="card-link">Get Your Code →</span>
+            <div class="prize-date">Prize type<strong>2-Day Real-World Pass</strong></div>
+            <span class="card-link card-link--gold">Enter Now →</span>
           </div>
         </div>
       </a>
@@ -354,52 +373,21 @@
     <div class="section-label">Closed</div>
     <div class="section-title">Past Prizes</div>
 
-    <div class="prizes-grid">
+    <div class="prizes-grid--2 prizes-grid">
 
+      <!-- Subaru BRZ -->
       <div class="prize-card prize-card--ended">
         <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=600&q=80" alt="May Hotlap Challenge">
+          <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600&q=80" alt="Subaru BRZ Giveaway">
           <span class="status-badge status-badge--ended">Ended</span>
         </div>
         <div class="prize-card-body">
-          <div class="prize-card-title">May Hotlap Challenge</div>
-          <div class="prize-card-value">$50 Store Credit</div>
-          <p class="prize-card-desc">Monthly fastest-lap challenge at Laguna Seca.</p>
+          <div class="prize-card-title">Subaru BRZ Giveaway</div>
+          <div class="prize-card-value">Full Car — Spirit Works</div>
+          <p class="prize-card-desc">A real Subaru BRZ, gifted in partnership with Spirit Works. One of the biggest prizes in SIM1Racing history.</p>
           <div class="prize-card-footer">
-            <div class="prize-date">Winner<strong>Dj Hamilton</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">May 31, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="prize-card prize-card--ended">
-        <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="April Clip of the Month">
-          <span class="status-badge status-badge--ended">Ended</span>
-        </div>
-        <div class="prize-card-body">
-          <div class="prize-card-title">April Clip of the Month</div>
-          <div class="prize-card-value">$75 Gift Card</div>
-          <p class="prize-card-desc">Community-voted best onboard moment of April.</p>
-          <div class="prize-card-footer">
-            <div class="prize-date">Winner<strong>Stephanie Egusquiza</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">Apr 30, 2026</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="prize-card prize-card--ended">
-        <div class="prize-card-img">
-          <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&q=80" alt="March Raffle">
-          <span class="status-badge status-badge--ended">Ended</span>
-        </div>
-        <div class="prize-card-body">
-          <div class="prize-card-title">March Member Raffle</div>
-          <div class="prize-card-value">Sim Wheel Bundle — $280 Value</div>
-          <p class="prize-card-desc">Monthly Gold Member auto-draw for sim hardware.</p>
-          <div class="prize-card-footer">
-            <div class="prize-date">Winner<strong>Jonas Acevedo</strong></div>
-            <span style="font-family:'Barlow Condensed',sans-serif;font-size:.72em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#444;">Mar 31, 2026</span>
+            <div class="prize-date">Presented by<strong>Spirit Works</strong></div>
+            <a href="https://www.sim1racing.com/car-giveaways#g/swg-003-brz" target="_blank" rel="noopener" style="font-family:'Barlow Condensed',sans-serif;font-size:.8em;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#555;text-decoration:none;border-bottom:1px solid #333;padding-bottom:1px;">View Details →</a>
           </div>
         </div>
       </div>
@@ -411,10 +399,12 @@
 <!-- ── FOOTER CTA ── -->
 <div class="footer-cta">
   <div class="footer-cta-inner">
-    <h2>Don't Miss<br>Your Shot</h2>
-    <p>New prizes drop every month. Become a Gold Member for free league entry, automatic raffle tickets, and first access to every new prize.</p>
-    <a href="#" class="btn btn--red">Become a Gold Member</a>
-    <a href="#" class="btn btn--ghost">Back to Top ↑</a>
+    <h2>Your Next<br>Win Awaits</h2>
+    <p>New prizes and competitions added regularly. Stay active, race hard, and keep an eye on this page.</p>
+    <div class="btn-row">
+      <a href="https://www.sim1racing.com/qualifiers" target="_blank" rel="noopener" class="btn btn--red">Earn a Team Spot</a>
+      <a href="https://www.sim1racing.com/leagues" target="_blank" rel="noopener" class="btn btn--ghost">Browse Leagues</a>
+    </div>
   </div>
 </div>
 
